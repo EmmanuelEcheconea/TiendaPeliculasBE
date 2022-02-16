@@ -5,7 +5,8 @@ public class Producto {
 	private long id;
 	private long idPelicula;
 	private long idCarrito;
-	private long idFactura;
+	private long idPedido;
+	private long idUsuario;
 	private long cantidad;
 	public long getId() {
 		return id;
@@ -25,11 +26,17 @@ public class Producto {
 	public void setIdCarrito(long idCarrito) {
 		this.idCarrito = idCarrito;
 	}
-	public long getIdFactura() {
-		return idFactura;
+	public long getIdPedido() {
+		return idPedido;
 	}
-	public void setIdFactura(long idFactura) {
-		this.idFactura = idFactura;
+	public void setIdPedido(long idPedido) {
+		this.idPedido = idPedido;
+	}
+	public long getIdUsuario() {
+		return idUsuario;
+	}
+	public void setIdUsuario(long idUsuario) {
+		this.idUsuario = idUsuario;
 	}
 	public long getCantidad() {
 		return cantidad;

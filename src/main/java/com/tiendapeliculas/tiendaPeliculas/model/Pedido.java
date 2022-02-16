@@ -7,6 +7,7 @@ import com.tiendapeliculas.tiendaPeliculas.model.enums.EstadoPedidoEnum;
 public class Pedido {
 	private long id;
 	private long idCarrito;
+	private long idUsuario;
 	private EstadoPedidoEnum estado;
 	private Date fechaDeCambioDeEstado;
 	private Date fechaGenerada;
@@ -22,6 +23,12 @@ public class Pedido {
 	}
 	public void setIdCarrito(long idCarrito) {
 		this.idCarrito = idCarrito;
+	}
+	public long getIdUsuario() {
+		return idUsuario;
+	}
+	public void setIdUsuario(long idUsuario) {
+		this.idUsuario = idUsuario;
 	}
 	public EstadoPedidoEnum getEstado() {
 		return estado;
