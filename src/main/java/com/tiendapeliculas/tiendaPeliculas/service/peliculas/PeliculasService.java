@@ -33,7 +33,7 @@ public class PeliculasService {
 		}
 		catch(Exception e) {
 			System.out.println(e);
-			return 0;
+			return -1;
 		}
 	}
 	
@@ -46,7 +46,7 @@ public class PeliculasService {
 		}
 		catch(Exception e) {
 			System.out.println(e);
-			return 0;
+			return -1;
 		}
 	}
 	
@@ -67,7 +67,7 @@ public class PeliculasService {
 		}catch (Exception e)
 		{
 			System.out.println(e);
-			return 0;
+			return -1;
 		}
 	}
 }
