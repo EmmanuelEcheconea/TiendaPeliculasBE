@@ -33,4 +33,21 @@ public class ProductosController {
 		}
 		return new ResponseEntity<>("Hubo un problema al intentar guardar el producto", HttpStatus.BAD_REQUEST);							
 	}
+	
+	@PostMapping("/eliminar")
+	public ResponseEntity<String> borrarProducto(@RequestBody int idPelicula)
+	{
+		if(idPelicula > 0)
+		{
+			byte respuesta = productosService.borrarProducto(idPelicula);
+			if(respuesta == 1)
+			{
+				return new ResponseEntity<>("El producto se borro de forma exitosa", HttpStatus.OK);				
+			}else if(respuesta == 0)
+			{
+				return new ResponseEntity<>("El id no existe", HttpStatus.BAD_REQUEST);				
+			}
+		}
+		return new ResponseEntity<>("Hubo un problema al intentar borrar el producto", HttpStatus.BAD_REQUEST);
+	}
 }

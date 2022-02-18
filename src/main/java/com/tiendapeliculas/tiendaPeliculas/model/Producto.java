@@ -1,5 +1,7 @@
 package com.tiendapeliculas.tiendaPeliculas.model;
 
+import com.tiendapeliculas.tiendaPeliculas.model.enums.EstadoProductoEnum;
+
 public class Producto {
 
 	private long id;
@@ -7,6 +9,7 @@ public class Producto {
 	private long idCarrito;
 	private long idPedido;
 	private long idUsuario;
+	private EstadoProductoEnum estadoProducto;
 	private long cantidad;
 	public long getId() {
 		return id;
@@ -37,6 +40,12 @@ public class Producto {
 	}
 	public void setIdUsuario(long idUsuario) {
 		this.idUsuario = idUsuario;
+	}
+	public EstadoProductoEnum getEstadoProducto() {
+		return estadoProducto;
+	}
+	public void setEstadoProducto(EstadoProductoEnum estadoProducto) {
+		this.estadoProducto = estadoProducto;
 	}
 	public long getCantidad() {
 		return cantidad;
