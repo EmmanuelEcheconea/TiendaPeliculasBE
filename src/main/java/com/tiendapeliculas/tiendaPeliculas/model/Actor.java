@@ -2,6 +2,9 @@ package com.tiendapeliculas.tiendaPeliculas.model;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Actor {
 
 	private long id;

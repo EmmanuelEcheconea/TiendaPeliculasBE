@@ -1,5 +1,8 @@
 package com.tiendapeliculas.tiendaPeliculas.model;
 
+import javax.persistence.Entity;
+
+@Entity
 public class Genero {
 
 	private long id;

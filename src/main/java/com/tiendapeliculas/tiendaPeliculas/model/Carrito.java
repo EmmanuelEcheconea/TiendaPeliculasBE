@@ -1,12 +1,14 @@
 package com.tiendapeliculas.tiendaPeliculas.model;
 
-import com.tiendapeliculas.tiendaPeliculas.model.enums.EstadoCarritoEnum;
+import javax.persistence.Entity;
 
+
+@Entity
 public class Carrito {
 
 	private long id;
 	private long idUsuario;
-	private EstadoCarritoEnum estado;
+	private String estado;
 	
 	public long getId() {
 		return id;
@@ -20,10 +22,10 @@ public class Carrito {
 	public void setIdUsuario(long idUsuario) {
 		this.idUsuario = idUsuario;
 	}
-	public EstadoCarritoEnum getEstado() {
+	public String getEstado() {
 		return estado;
 	}
-	public void setEstado(EstadoCarritoEnum estado) {
+	public void setEstado(String estado) {
 		this.estado = estado;
 	}
 	

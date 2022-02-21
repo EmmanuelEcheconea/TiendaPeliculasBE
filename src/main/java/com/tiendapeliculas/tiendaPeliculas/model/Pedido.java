@@ -1,14 +1,14 @@
 package com.tiendapeliculas.tiendaPeliculas.model;
 
 import java.util.Date;
+import javax.persistence.Entity;
 
-import com.tiendapeliculas.tiendaPeliculas.model.enums.EstadoPedidoEnum;
-
+@Entity
 public class Pedido {
 	private long id;
 	private long idCarrito;
 	private long idUsuario;
-	private EstadoPedidoEnum estado;
+	private String estado;
 	private Date fechaDeCambioDeEstado;
 	private Date fechaGenerada;
 	private double precioTotal;
@@ -30,10 +30,10 @@ public class Pedido {
 	public void setIdUsuario(long idUsuario) {
 		this.idUsuario = idUsuario;
 	}
-	public EstadoPedidoEnum getEstado() {
+	public String getEstado() {
 		return estado;
 	}
-	public void setEstado(EstadoPedidoEnum estado) {
+	public void setEstado(String estado) {
 		this.estado = estado;
 	}
 	public Date getFechaDeCambioDeEstado() {
