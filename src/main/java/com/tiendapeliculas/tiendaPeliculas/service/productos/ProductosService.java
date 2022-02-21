@@ -1,13 +1,14 @@
 package com.tiendapeliculas.tiendaPeliculas.service.productos;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.tiendapeliculas.tiendaPeliculas.data.peliculas.IPeliculasData;
 import com.tiendapeliculas.tiendaPeliculas.data.productos.IProductosData;
 import com.tiendapeliculas.tiendaPeliculas.model.Pelicula;
 import com.tiendapeliculas.tiendaPeliculas.model.Producto;
 import com.tiendapeliculas.tiendaPeliculas.model.enums.EstadoProductoEnum;
-
+@Service
 public class ProductosService {
 
 	@Autowired

@@ -3,11 +3,12 @@ package com.tiendapeliculas.tiendaPeliculas.service.pedidos;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.tiendapeliculas.tiendaPeliculas.data.pedidos.IPedidosData;
 import com.tiendapeliculas.tiendaPeliculas.model.Pedido;
 import com.tiendapeliculas.tiendaPeliculas.model.enums.EstadoPedidoEnum;
-
+@Service
 public class PedidosService {
 
 	@Autowired

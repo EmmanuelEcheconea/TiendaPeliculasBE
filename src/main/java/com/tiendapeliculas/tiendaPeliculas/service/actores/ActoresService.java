@@ -3,10 +3,11 @@ package com.tiendapeliculas.tiendaPeliculas.service.actores;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.tiendapeliculas.tiendaPeliculas.data.actores.IActoresData;
 import com.tiendapeliculas.tiendaPeliculas.model.Actor;
-
+@Service
 public class ActoresService {
 
 	@Autowired
