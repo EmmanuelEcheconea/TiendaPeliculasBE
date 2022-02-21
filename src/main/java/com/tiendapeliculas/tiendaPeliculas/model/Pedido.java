@@ -2,9 +2,11 @@ package com.tiendapeliculas.tiendaPeliculas.model;
 
 import java.util.Date;
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 public class Pedido {
+	@Id
 	private long id;
 	private long idCarrito;
 	private long idUsuario;

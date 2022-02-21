@@ -1,6 +1,5 @@
 package com.tiendapeliculas.tiendaPeliculas.model;
 
-import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -15,8 +14,6 @@ public class Pelicula {
 	private String nombre;
 	private float precioAlquiler;
 	private float precioCompra;
-	private List<Actor> elenco;
-	private List<Genero> generos;
 	private String duracion;
 	private int calificacion;
 	
@@ -43,18 +40,6 @@ public class Pelicula {
 	}
 	public void setPrecioCompra(float precioCompra) {
 		this.precioCompra = precioCompra;
-	}
-	public List<Actor> getElenco() {
-		return elenco;
-	}
-	public void setElenco(List<Actor> elenco) {
-		this.elenco = elenco;
-	}
-	public List<Genero> getGeneros() {
-		return generos;
-	}
-	public void setGeneros(List<Genero> generos) {
-		this.generos = generos;
 	}
 	public String getDuracion() {
 		return duracion;

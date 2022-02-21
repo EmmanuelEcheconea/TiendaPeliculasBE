@@ -57,8 +57,6 @@ public class PeliculasService {
 			Pelicula peliculaObtenida = obtenerPelicula(id);
 			peliculaObtenida.setCalificacion(pelicula.getCalificacion());
 			peliculaObtenida.setDuracion(pelicula.getDuracion());
-			peliculaObtenida.setElenco(pelicula.getElenco());
-			peliculaObtenida.setGeneros(pelicula.getGeneros());
 			peliculaObtenida.setNombre(pelicula.getNombre());
 			peliculaObtenida.setPrecioAlquiler(pelicula.getPrecioAlquiler());
 			peliculaObtenida.setPrecioCompra(pelicula.getPrecioCompra());

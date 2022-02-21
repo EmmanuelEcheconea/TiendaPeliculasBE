@@ -19,7 +19,7 @@ public class ActoresService {
 
 	public Actor obtenerActor(int id) {
 		try {
-			return actoresData.findById(id).get();
+			return actoresData.findById((long)id).get();
 		} catch (Exception e) {
 			System.out.println(e);
 			return null;
@@ -38,7 +38,7 @@ public class ActoresService {
 
 	public byte borrarActor(int id) {
 		try {
-			Actor resultado = actoresData.findById(id).get();
+			Actor resultado = actoresData.findById((long)id).get();
 			if (resultado != null) {
 				actoresData.delete(resultado);
 				return 1;
@@ -52,7 +52,7 @@ public class ActoresService {
 
 	public byte actualizarActor(Actor actor, int id) {
 		try {
-			Actor resultado = actoresData.findById(id).get();
+			Actor resultado = actoresData.findById((long)id).get();
 			if(resultado != null)
 			{
 				actoresData.save(resultado);

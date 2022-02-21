@@ -1,11 +1,12 @@
 package com.tiendapeliculas.tiendaPeliculas.model;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 
 @Entity
 public class Carrito {
-
+	@Id
 	private long id;
 	private long idUsuario;
 	private String estado;

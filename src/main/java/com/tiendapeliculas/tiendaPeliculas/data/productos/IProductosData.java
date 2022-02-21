@@ -9,7 +9,7 @@ import com.tiendapeliculas.tiendaPeliculas.model.Producto;
 @Repository
 public interface IProductosData extends CrudRepository<Producto, Integer>{
 	
-	@Query("SELECT * FROM productos where idPelicula = :idPelicula and idCarrito = :idCarrito and estadoProducto = :estadoProducto")
+	@Query(value="SELECT * FROM productos where idPelicula = :idPelicula and idCarrito = :idCarrito and estadoProducto = :estadoProducto", nativeQuery = true)
 	public Producto findProductoByIdCarritoAndByIdPelicula(@Param("idCarrito") int idCarrito,
 			@Param("idPelicula") int idPelicula, @Param("estadoProducto") String estadoProducto);
 }

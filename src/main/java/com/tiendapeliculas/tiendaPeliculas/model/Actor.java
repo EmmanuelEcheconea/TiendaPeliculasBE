@@ -3,10 +3,11 @@ package com.tiendapeliculas.tiendaPeliculas.model;
 import java.util.Date;
 
 import javax.persistence.Entity;
+import javax.persistence.Id;
 
 @Entity
 public class Actor {
-
+	@Id
 	private long id;
 	private String nombre;
 	private String apellido;
