@@ -6,16 +6,17 @@ import javax.persistence.Id;
 @Entity
 public class Usuario {
 	@Id
-	private long id;
+	private int id;
 	private String nombre;
 	private String apellido;
 	private String email;
 	private String usuario;
 	private String contrasena;
-	public long getId() {
+	private int idRol;
+	public int getId() {
 		return id;
 	}
-	public void setId(long id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 	public String getNombre() {
@@ -48,5 +49,10 @@ public class Usuario {
 	public void setContrasena(String contrasena) {
 		this.contrasena = contrasena;
 	}
-	
+	public int getIdRol() {
+		return idRol;
+	}
+	public void setIdRol(int idRol) {
+		this.idRol = idRol;
+	}
 }

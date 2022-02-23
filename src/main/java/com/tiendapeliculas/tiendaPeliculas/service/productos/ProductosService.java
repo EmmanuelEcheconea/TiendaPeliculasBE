@@ -1,5 +1,7 @@
 package com.tiendapeliculas.tiendaPeliculas.service.productos;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -8,6 +10,7 @@ import com.tiendapeliculas.tiendaPeliculas.data.productos.IProductosData;
 import com.tiendapeliculas.tiendaPeliculas.model.Pelicula;
 import com.tiendapeliculas.tiendaPeliculas.model.Producto;
 import com.tiendapeliculas.tiendaPeliculas.model.enums.EstadoProductoEnum;
+
 @Service
 public class ProductosService {
 
@@ -18,8 +21,8 @@ public class ProductosService {
 
 	public byte insertarProducto(int idPelicula) {
 		try {
-			Pelicula pelicula = peliculaData.findById(idPelicula).get();
-			if (pelicula != null) {
+			Optional<Pelicula> pelicula = peliculaData.findById(idPelicula);
+			if (pelicula.isPresent()) {
 				/*
 				 * TODO:falta asignar los valores correspondientes al producto el numer del
 				 * carro y usuario luego
@@ -37,10 +40,10 @@ public class ProductosService {
 
 	public byte borrarProducto(int idPelicula) {
 		try {
+			// cambiar el ID del usuario
 			Producto producto = productosData.findProductoByIdCarritoAndByIdPelicula(1, idPelicula,
 					EstadoProductoEnum.SELECCIONADO.toString());
 			if (producto != null) {
-
 				productosData.delete(producto);
 				return 1;
 			}

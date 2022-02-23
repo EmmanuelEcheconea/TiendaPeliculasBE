@@ -1,6 +1,7 @@
 package com.tiendapeliculas.tiendaPeliculas.service.peliculas;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -10,60 +11,60 @@ import com.tiendapeliculas.tiendaPeliculas.model.Pelicula;
 
 @Service
 public class PeliculasService {
-	
-	
+
 	@Autowired
 	private IPeliculasData peliculaData;
-	
-	public List<Pelicula> obtenerPeliculas()
-	{
+
+	public List<Pelicula> obtenerPeliculas() {
 		return (List<Pelicula>) peliculaData.findAll();
 	}
-	
-	public Pelicula obtenerPelicula(int id)
-	{
-		return peliculaData.findById(id).get();
+
+	public Pelicula obtenerPelicula(int id) {
+		Optional<Pelicula> pelicula = peliculaData.findById(id);
+		if (pelicula.isPresent()) {
+			return pelicula.get();
+		}
+		return null;
 	}
-	
-	public byte insertarPelicula(Pelicula pelicula)
-	{
+
+	public byte insertarPelicula(Pelicula pelicula) {
 		try {
 			peliculaData.save(pelicula);
 			return 1;
-		}
-		catch(Exception e) {
+		} catch (Exception e) {
 			System.out.println(e);
 			return -1;
 		}
 	}
-	
-	public byte borrarPelicula(int id)
-	{
+
+	public byte borrarPelicula(int id) {
 		try {
-			Pelicula pelicula = obtenerPelicula(id);
-			peliculaData.delete(pelicula);
-			return 1;
-		}
-		catch(Exception e) {
+			Optional<Pelicula> pelicula = peliculaData.findById(id);
+			if (pelicula.isPresent()) {
+				peliculaData.delete(pelicula.get());
+				return 1;
+			}
+			return 0;
+		} catch (Exception e) {
 			System.out.println(e);
 			return -1;
 		}
 	}
-	
-	public byte actualizarPelicula(int id, Pelicula pelicula)
-	{
-		try 
-		{
-			Pelicula peliculaObtenida = obtenerPelicula(id);
-			peliculaObtenida.setCalificacion(pelicula.getCalificacion());
-			peliculaObtenida.setDuracion(pelicula.getDuracion());
-			peliculaObtenida.setNombre(pelicula.getNombre());
-			peliculaObtenida.setPrecioAlquiler(pelicula.getPrecioAlquiler());
-			peliculaObtenida.setPrecioCompra(pelicula.getPrecioCompra());
-			peliculaData.save(peliculaObtenida);
-			return 1;
-		}catch (Exception e)
-		{
+
+	public byte actualizarPelicula(int id, Pelicula pelicula) {
+		try {
+			Optional<Pelicula> resultado = peliculaData.findById(id);
+			if (resultado.isPresent()) {
+				resultado.get().setCalificacion(pelicula.getCalificacion());
+				resultado.get().setDuracion(pelicula.getDuracion());
+				resultado.get().setNombre(pelicula.getNombre());
+				resultado.get().setPrecioAlquiler(pelicula.getPrecioAlquiler());
+				resultado.get().setPrecioCompra(pelicula.getPrecioCompra());
+				peliculaData.save(resultado.get());
+				return 1;
+			}
+			return 0;
+		} catch (Exception e) {
 			System.out.println(e);
 			return -1;
 		}
