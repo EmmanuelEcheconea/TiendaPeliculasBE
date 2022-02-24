@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import com.tiendapeliculas.tiendaPeliculas.model.Pelicula;
 
 @Repository
-public interface IPeliculasData extends CrudRepository<Pelicula, Integer> {
+public interface IPeliculasData extends CrudRepository<Pelicula, Long> {
 
 }

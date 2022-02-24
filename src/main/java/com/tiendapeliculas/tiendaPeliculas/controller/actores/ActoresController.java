@@ -5,17 +5,19 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import com.tiendapeliculas.tiendaPeliculas.model.Actor;
 import com.tiendapeliculas.tiendaPeliculas.service.actores.ActoresService;
 
 @RestController
-@RequestMapping("/Actor")
+@RequestMapping("/actor")
 public class ActoresController {
 
 	@Autowired
@@ -27,7 +29,7 @@ public class ActoresController {
 	}
 
 	@GetMapping("/obtener/{id}")
-	public Actor obtenerActor(@RequestParam int id) {
+	public Actor obtenerActor(@PathVariable int id) {
 		if (id > 0) {
 			return actoresService.obtenerActor(id);
 		}
@@ -45,8 +47,8 @@ public class ActoresController {
 		return new ResponseEntity<>("El Actor no se pudo insertar", HttpStatus.BAD_REQUEST);
 	}
 
-	@PostMapping("/borrar/{id}")
-	public ResponseEntity<String> borrarActor(@RequestParam int id) {
+	@DeleteMapping("/borrar/{id}")
+	public ResponseEntity<String> borrarActor(@PathVariable int id) {
 		if (id > 0) {
 			byte resultado = actoresService.borrarActor(id);
 			if (resultado == 1) {
@@ -57,8 +59,8 @@ public class ActoresController {
 		return new ResponseEntity<>("El Actor no se pudo elminar", HttpStatus.BAD_REQUEST);
 	}
 
-	@PostMapping("/actualizar/{id}")
-	public ResponseEntity<String> actualizarActor(@RequestBody Actor actor, @RequestParam int id) {
+	@PutMapping("/actualizar/{id}")
+	public ResponseEntity<String> actualizarActor(@RequestBody Actor actor, @PathVariable int id) {
 		if (id > 0) {
 			byte resultado = actoresService.actualizarActor(actor, id);
 			if (resultado == 1) {

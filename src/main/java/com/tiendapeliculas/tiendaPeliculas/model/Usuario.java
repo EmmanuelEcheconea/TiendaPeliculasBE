@@ -12,7 +12,7 @@ public class Usuario {
 	private String email;
 	private String usuario;
 	private String contrasena;
-	private int idRol;
+	private int id_rol;
 	public int getId() {
 		return id;
 	}
@@ -49,10 +49,12 @@ public class Usuario {
 	public void setContrasena(String contrasena) {
 		this.contrasena = contrasena;
 	}
-	public int getIdRol() {
-		return idRol;
+	public int getId_rol() {
+		return id_rol;
 	}
-	public void setIdRol(int idRol) {
-		this.idRol = idRol;
+	public void setId_rol(int id_rol) {
+		this.id_rol = id_rol;
 	}
+	
+
 }

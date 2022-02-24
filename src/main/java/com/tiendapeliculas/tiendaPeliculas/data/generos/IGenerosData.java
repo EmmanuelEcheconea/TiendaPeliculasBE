@@ -5,6 +5,6 @@ import org.springframework.stereotype.Repository;
 
 import com.tiendapeliculas.tiendaPeliculas.model.Genero;
 @Repository
-public interface IGenerosData extends CrudRepository<Genero, Integer>{
+public interface IGenerosData extends CrudRepository<Genero, Long>{
 
 }

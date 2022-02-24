@@ -52,7 +52,7 @@ public class UsuariosService {
 				resultado.get().setEmail(usuario.getEmail());
 				resultado.get().setUsuario(usuario.getUsuario());
 				resultado.get().setContrasena(usuario.getContrasena());
-				resultado.get().setId(usuario.getIdRol());
+				resultado.get().setId(usuario.getId_rol());
 				usuariosData.save(resultado.get());
 				return 1;
 			}

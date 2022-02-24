@@ -20,7 +20,7 @@ public class GenerosService {
 	}
 
 	public Genero obtenerGeneroById(int id) {
-		Optional<Genero> genero = generoData.findById(id);
+		Optional<Genero> genero = generoData.findById((long)id);
 		if (genero.isPresent()) {
 			return genero.get();
 		}
@@ -39,7 +39,7 @@ public class GenerosService {
 
 	public byte borrarGenero(int id) {
 		try {
-			Optional<Genero> genero = generoData.findById(id);
+			Optional<Genero> genero = generoData.findById((long)id);
 			if (genero.isPresent()) {
 				generoData.delete(genero.get());
 				return 1;
@@ -53,7 +53,7 @@ public class GenerosService {
 	
 	public byte actualizarGenero(Genero genero, int id) {
 		try {
-			Optional<Genero> resultado = generoData.findById(id);
+			Optional<Genero> resultado = generoData.findById((long)id);
 			if(resultado.isPresent()) {
 				resultado.get().setNombre(genero.getNombre());
 				generoData.save(resultado.get());

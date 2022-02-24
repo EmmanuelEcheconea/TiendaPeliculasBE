@@ -21,7 +21,7 @@ public class ProductosService {
 
 	public byte insertarProducto(int idPelicula) {
 		try {
-			Optional<Pelicula> pelicula = peliculaData.findById(idPelicula);
+			Optional<Pelicula> pelicula = peliculaData.findById((long)idPelicula);
 			if (pelicula.isPresent()) {
 				/*
 				 * TODO:falta asignar los valores correspondientes al producto el numer del

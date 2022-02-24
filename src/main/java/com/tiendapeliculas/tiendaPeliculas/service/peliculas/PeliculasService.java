@@ -20,7 +20,7 @@ public class PeliculasService {
 	}
 
 	public Pelicula obtenerPelicula(int id) {
-		Optional<Pelicula> pelicula = peliculaData.findById(id);
+		Optional<Pelicula> pelicula = peliculaData.findById((long)id);
 		if (pelicula.isPresent()) {
 			return pelicula.get();
 		}
@@ -39,7 +39,7 @@ public class PeliculasService {
 
 	public byte borrarPelicula(int id) {
 		try {
-			Optional<Pelicula> pelicula = peliculaData.findById(id);
+			Optional<Pelicula> pelicula = peliculaData.findById((long)id);
 			if (pelicula.isPresent()) {
 				peliculaData.delete(pelicula.get());
 				return 1;
@@ -53,7 +53,7 @@ public class PeliculasService {
 
 	public byte actualizarPelicula(int id, Pelicula pelicula) {
 		try {
-			Optional<Pelicula> resultado = peliculaData.findById(id);
+			Optional<Pelicula> resultado = peliculaData.findById((long)id);
 			if (resultado.isPresent()) {
 				resultado.get().setCalificacion(pelicula.getCalificacion());
 				resultado.get().setDuracion(pelicula.getDuracion());
